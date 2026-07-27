@@ -5,6 +5,7 @@ import { organizationJsonLd, websiteJsonLd } from "@/lib/json-ld";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { BackToTop } from "@/components/layout/back-to-top";
+// @ts-ignore: CSS import handled by Next.js
 import "./globals.css";
 
 const inter = Inter({
@@ -76,7 +77,9 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd()),
+          }}
         />
         <script
           type="application/ld+json"

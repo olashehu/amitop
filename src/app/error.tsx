@@ -13,7 +13,6 @@ export default function ErrorBoundary({
   reset: () => void;
 }) {
   useEffect(() => {
-    // In production, report this to your monitoring service (Sentry, etc.)
     console.error(error);
   }, [error]);
 

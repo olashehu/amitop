@@ -15,9 +15,6 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const obj = {name: 'shehu', age: 20, gender: 'male'};
-  console.log(Object.getPrototypeOf(obj), 'kkkk');
-
   return (
     <>
       <Hero />
