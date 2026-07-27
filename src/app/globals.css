@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Mapped from AMITOP brand palette (HSL for shadcn compatibility) */
+    --background: 0 0% 100%;          /* #FFFFFF */
+    --foreground: 221 39% 11%;        /* #111827 */
+
+    --primary: 222 47% 11%;           /* #0F172A */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 221 83% 53%;         /* #2563EB */
+    --secondary-foreground: 0 0% 100%;
+
+    --accent: 189 94% 43%;            /* #06B6D4 */
+    --accent-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 221 39% 11%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+  /* Visible keyboard focus everywhere — accessibility floor */
+  :focus-visible {
+    outline: 2px solid hsl(var(--secondary));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer utilities {
+  .section-padding {
+    @apply py-20 md:py-28;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
